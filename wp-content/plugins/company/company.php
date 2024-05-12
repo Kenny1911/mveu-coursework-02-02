@@ -20,6 +20,7 @@ function company_plugin_init_vacancy_post_type(): void
         'label' => 'Компания',
         'public' => true,
         'supports' => ['title', 'editor', 'thumbnail'],
+        'has_archive' => 'companies',
     ]);
 
     add_action('add_meta_boxes', function () {
