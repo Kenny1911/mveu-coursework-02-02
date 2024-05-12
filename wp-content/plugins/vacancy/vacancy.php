@@ -20,6 +20,7 @@ function vacancy_plugin_init_vacancy_post_type(): void
         'label' => 'Вакансия',
         'public' => true,
         'supports' => ['title', 'editor'],
+        'has_archive' => 'vacancies',
     ]);
 
     add_action('add_meta_boxes', function () {
