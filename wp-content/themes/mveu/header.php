@@ -8,10 +8,12 @@ $baseUri = get_template_directory_uri();
 <html class="no-js" lang="zxx">
 
 <head>
+    <?php wp_head();?>
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Job Board</title>
-    <meta name="description" content="">
+    <title><?php wp_title()?></title>
+    <!--<meta name="description" content="">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
@@ -48,7 +50,7 @@ $baseUri = get_template_directory_uri();
                         <div class="row align-items-center">
                             <div class="col-xl-3 col-lg-2">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="<?php echo home_url()?>">
                                         <img src="<?php echo $baseUri ?>/img/logo.png" alt="">
                                     </a>
                                 </div>

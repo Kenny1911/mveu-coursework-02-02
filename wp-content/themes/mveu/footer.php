@@ -23,6 +23,9 @@ $baseUri = get_template_directory_uri();
 <!--/ footer end  -->
 
 <!-- link that opens popup -->
+
+<?php wp_footer()?>
+
 <!-- JS here -->
 <script src="<?php echo $baseUri ?>/js/vendor/modernizr-3.5.0.min.js"></script>
 <script src="<?php echo $baseUri ?>/js/vendor/jquery-1.12.4.min.js"></script>

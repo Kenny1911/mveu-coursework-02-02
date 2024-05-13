@@ -30,6 +30,9 @@ body {
   font-weight: normal;
   font-style: normal;
   background: #F5F7FA;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* line 13, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
@@ -2226,6 +2229,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: cover;
   background: #001D38;
+  margin-top: auto;
 }
 
 /* line 7, ../../Arafath/CL/December/235. Job board/HTML/scss/_footer.scss */
@@ -3692,7 +3696,8 @@ h3 {
 }
 
 /* line 92, ../../Arafath/CL/December/235. Job board/HTML/scss/_candidates.scss */
-.pagination_wrap ul li a {
+.pagination_wrap ul li a,
+.pagination_wrap ul li .page-numbers {
   width: 38px;
   height: 38px;
   border: 1px solid #EAEAEA;
@@ -3762,10 +3767,19 @@ h3 {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  padding: 15px;
+  padding: 5px;
   background: #F5F7FA;
   margin-right: 25px;
   border: 1px solid #F0F0F0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.top_companies_area .single_company .thumb > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* line 32, ../../Arafath/CL/December/235. Job board/HTML/scss/_compani.scss */
