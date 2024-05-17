@@ -8,6 +8,10 @@ Version: 1.0.0
 // Защита от прямого доступа к файлу
 defined('ABSPATH') or die('No script kiddies please!');
 
+require_once __DIR__.'/widget/specializations.php';
+require_once __DIR__.'/widget/vacancies.php';
+require_once __DIR__.'/widget/single-vacancy.php';
+
 function vacancy_plugin_init(): void
 {
     add_action('init', 'vacancy_plugin_init_vacancy_post_type');
