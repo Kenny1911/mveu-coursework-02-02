@@ -21,13 +21,9 @@ get_header();
             </div>
         </div>
         <div class="job_lists">
-            <div class="row">
-                <?php foreach ($vacancies as $vacancy): ?>
-                    <div class="col-lg-12 col-md-12">
-                        <?php get_template_part('template/vacancy-card', null, ['vacancy' => $vacancy]) ?>
-                    </div>
-                <?php endforeach;?>
-            </div>
+            <?php foreach ($vacancies as $vacancy): ?>
+                <?php get_template_part('template/vacancy-card', null, ['vacancy' => $vacancy]) ?>
+            <?php endforeach;?>
         </div>
         <div class="text-center">
             <a href="<?php echo get_post_type_archive_link('vacancy') ?>" class="boxed-btn4">Смотреть все</a>

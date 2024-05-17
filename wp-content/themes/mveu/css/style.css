@@ -3313,6 +3313,16 @@ h3 {
   border: 1px solid #F0F0F0;
 }
 
+.job_listing_area .job_lists .single_jobs .jobs_left {
+  padding-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .job_listing_area .job_lists .single_jobs .jobs_left {
+    padding-right: 0px;
+  }
+}
+
 /* line 46, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
 .job_listing_area .job_lists .single_jobs .jobs_left .jobs_conetent {
   float: left;
@@ -7496,4 +7506,26 @@ h6 {
 
 .last_news {
   margin-bottom: 30px;
+}
+
+.widget {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.widget-list-wrapper ul {
+  padding-left: 10px;
+}
+
+.widget-list-wrapper > ul {
+  padding-left: 0;
+}
+
+.widget-list-wrapper li {
+  margin-bottom: 8px;
+}
+
+.widget.widget_single_company img {
+  max-width: 100%;
 }

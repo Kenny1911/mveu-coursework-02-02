@@ -99,3 +99,19 @@ function get_posts_pagination_mvue_theme(): string
 
 
 add_theme_support( 'post-thumbnails');
+
+add_action( 'widgets_init', function(){
+    register_sidebar([
+        'id' => 'archive-vacancy',
+        'name' => 'Сайдбар на странице с вакансиями',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+    ]);
+
+    register_sidebar([
+        'id' => 'archive-company',
+        'name' => 'Сайдбар на странице с компаниями',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+    ]);
+} );
