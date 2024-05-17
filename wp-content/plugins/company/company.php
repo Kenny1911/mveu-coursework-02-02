@@ -8,6 +8,10 @@ Version: 1.0.0
 // Защита от прямого доступа к файлу
 defined('ABSPATH') or die('No script kiddies please!');
 
+require_once __DIR__.'/widget/companies.php';
+require_once __DIR__.'/widget/single-company.php';
+require_once __DIR__.'/widget/cities.php';
+
 function company_plugin_init(): void
 {
     add_action('init', 'company_plugin_init_vacancy_post_type');
