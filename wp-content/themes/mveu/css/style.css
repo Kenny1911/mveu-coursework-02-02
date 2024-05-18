@@ -7529,3 +7529,26 @@ h6 {
 .widget.widget_single_company img {
   max-width: 100%;
 }
+
+.show-phone {
+  min-height: 60px;
+  margin-bottom: 20px
+}
+
+.show-phone > .show-phone__phone {
+  font-size: 2rem;
+  font-weight: bold;
+  display: none;
+}
+
+.show-phone.show-phone--show > button {
+  display: none;
+}
+
+.show-phone.show-phone--show > .show-phone__phone {
+  display: block;
+}
+
+.main {
+  margin-bottom: 70px;
+}

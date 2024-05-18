@@ -333,6 +333,11 @@ mailChimp();
 
 
 
+$(document).ready(function(){
+    $('.show-phone > button').on('click', function(e){
+        e.preventDefault();
+        $(this).parent().addClass('show-phone--show');
+    })
+});
 
-
-})(jQuery);	
+})(jQuery);

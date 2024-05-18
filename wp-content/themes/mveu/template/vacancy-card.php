@@ -18,23 +18,14 @@ if (!(isset($vacancy) && $vacancy instanceof WP_Post)) {
                 <div class="location">
                     <p>
                         Оплата:
-                        <?php echo ($salary > 0) ? number_format($salary, 0, '.', ' ').' руб.' : 'Не указана' ?>
+                        <?php echo vacancy_plugin_format_salary($salary) ?>
                     </p>
                 </div>
 
                 <?php $experience = get_post_meta($vacancy->ID, 'experience', true)?>
                 <div class="location">
                     <p>
-                        Опыт:
-                        <?php
-                            echo match ($experience) {
-                                'no' => 'Без опыта',
-                                'from_1_to_3' => 'От 1 до 3 лет',
-                                'from_3_to_6' => 'От 3 до 6 лет',
-                                'more_6' => 'Больше 6 лет',
-                                default => 'Не указан',
-                            }
-                        ?>
+                        Опыт: <?php echo vacancy_plugin_experience_title((string) $experience) ?>
                     </p>
                 </div>
             </div>
