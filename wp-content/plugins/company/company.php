@@ -86,3 +86,10 @@ function company_plugin_init_specialization_taxonomy(): void
 
 
 company_plugin_init();
+
+function company_plugin_city_archive_url(WP_Term $term): string
+{
+    $url = get_post_type_archive_link('company');
+
+    return add_query_arg(['taxonomy' => 'city', 'term' => $term->slug], $url);
+}

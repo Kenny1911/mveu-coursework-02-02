@@ -26,8 +26,7 @@ class CitiesWidget extends WP_Widget
             echo '<div class="widget-list-wrapper">';
 
             foreach ($terms as $term) {
-                $href = get_post_type_archive_link('company');
-                $href = add_query_arg(['taxonomy' => 'city', 'term' => $term->slug], $href);
+                $href = company_plugin_city_archive_url($term);
                 echo '<li>';
                 echo "<a href=\"{$href}\">{$term->name}</a>";
                 echo '</li>';
