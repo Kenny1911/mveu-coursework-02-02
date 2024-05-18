@@ -44,8 +44,7 @@ class SingleVacancyWidget extends \WP_Widget
         }
 
         $href = get_post_permalink($vacancy);
-        $salary = get_post_meta($vacancy->ID, 'salary', true);
-        $salary = ($salary > 0) ? number_format((int)$salary, 0, '.', ' ').' руб.' : 'Не указана';
+        $salary = vacancy_plugin_format_salary(get_post_meta($vacancy->ID, 'salary', true));
 
         ?>
             <div class="widget">

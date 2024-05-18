@@ -46,8 +46,7 @@ class SpecializationsWidget extends WP_Widget
             echo '<ul>';
 
             foreach ($terms as $term) {
-                $href = get_post_type_archive_link('vacancy');
-                $href = add_query_arg(['taxonomy' => 'speciality', 'term' => $term->slug], $href);
+                $href = vacancy_plugin_specialization_archive_url($term);
                 echo '<li>';
                 echo "<a href=\"{$href}\">{$term->name}</a>";
 

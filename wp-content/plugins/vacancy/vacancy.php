@@ -52,10 +52,9 @@ function vacancy_plugin_init_vacancy_post_type(): void
                         <td>
                             <select name="experience" id="">
                                 <option>Не указан</option>
-                                <option value="no" <?php selected($experience, 'no')?>>Без опыта</option>
-                                <option value="from_1_to_3" <?php selected($experience, 'from_1_to_3')?>>от 1 до 3 лет</option>
-                                <option value="from_3_to_6" <?php selected($experience, 'from_3_to_6')?>>От 3 до 6 лет</option>
-                                <option value="more_6" <?php selected($experience, 'more_6')?>>Больше 6 лет</option>
+                                <?php foreach (vacancy_plugin_experience_options() as $key => $value): ?>
+                                    <option value="<?php echo $key ?>" <?php selected($experience, $key)?>><?php echo $value ?></option>
+                                <?php endforeach;?>
                             </select>
                         </td>
                     </tr>
@@ -85,3 +84,32 @@ function vacancy_plugin_init_specialization_taxonomy(): void
 
 
 vacancy_plugin_init();
+
+function vacancy_plugin_format_salary(float|int|string $salary): string
+{
+    $salary = (int) $salary;
+
+    return ($salary > 0) ? number_format($salary, 0, '.', ' ').' руб.' : 'Не указана';
+}
+
+function vacancy_plugin_experience_options(): array
+{
+    return [
+        'no' => 'Без опыта',
+        'from_1_to_3' => 'От 1 до 3 лет',
+        'from_3_to_6' => 'От 3 до 6 лет',
+        'more_6' => 'Больше 6 лет',
+    ];
+}
+
+function vacancy_plugin_experience_title(string $experience): string
+{
+    return vacancy_plugin_experience_options()[$experience] ?? 'Не указан';
+}
+
+function vacancy_plugin_specialization_archive_url(WP_Term $term): string
+{
+    $url = get_post_type_archive_link('vacancy');
+
+    return add_query_arg(['taxonomy' => 'speciality', 'term' => $term->slug], $url);
+}
