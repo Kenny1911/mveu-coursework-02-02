@@ -25,6 +25,7 @@ function vacancy_plugin_init_vacancy_post_type(): void
         'public' => true,
         'supports' => ['title', 'editor'],
         'has_archive' => 'vacancies',
+        'show_in_nav_menus' => true,
     ]);
 
     add_action('add_meta_boxes', function () {
@@ -79,6 +80,7 @@ function vacancy_plugin_init_specialization_taxonomy(): void
         'label' => 'Специальность',
         'public' => true,
         'hierarchical' => true,
+        'show_in_nav_menus' => true,
     ]);
 }
 
