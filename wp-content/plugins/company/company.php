@@ -25,6 +25,7 @@ function company_plugin_init_vacancy_post_type(): void
         'public' => true,
         'supports' => ['title', 'editor', 'thumbnail'],
         'has_archive' => 'companies',
+        'show_in_nav_menus' => true,
     ]);
 
     add_action('add_meta_boxes', function () {
@@ -81,6 +82,7 @@ function company_plugin_init_specialization_taxonomy(): void
         'label' => 'Город',
         'public' => true,
         'hierarchical' => false,
+        'show_in_nav_menus' => true,
     ]);
 }
 
