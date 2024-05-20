@@ -44,3 +44,10 @@ class CompaniesWidget extends \WP_Widget
 add_action('widgets_init', function () {
     register_widget(CompaniesWidget::class);
 });
+
+add_shortcode('companies', function () {
+    ob_start();
+    (new CompaniesWidget())->widget([], []);
+
+    return ob_get_clean();
+});

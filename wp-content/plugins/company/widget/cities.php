@@ -41,3 +41,11 @@ class CitiesWidget extends WP_Widget
 add_action('widgets_init', function () {
     register_widget(CitiesWidget::class);
 });
+
+add_shortcode('cities', function () {
+    ob_start();
+    (new CitiesWidget())->widget([], []);
+
+    return ob_get_clean();
+});
+

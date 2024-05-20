@@ -62,3 +62,9 @@ add_action('widgets_init', function () {
     register_widget(SingleCompanyWidget::class);
 });
 
+add_shortcode('single-company', function ($atts) {
+    ob_start();
+    (new SingleCompanyWidget())->widget([], ['companyId' => $atts['id'] ?? null]);
+
+    return ob_get_clean();
+});
