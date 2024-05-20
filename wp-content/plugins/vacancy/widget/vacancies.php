@@ -44,3 +44,10 @@ class VacanciesWidget extends \WP_Widget
 add_action('widgets_init', function () {
     register_widget(VacanciesWidget::class);
 });
+
+add_shortcode('vacancies', function () {
+    ob_start();
+    (new VacanciesWidget())->widget([], []);
+
+    return ob_get_clean();
+});

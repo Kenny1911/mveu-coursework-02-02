@@ -61,3 +61,9 @@ add_action('widgets_init', function () {
     register_widget(SingleVacancyWidget::class);
 });
 
+add_shortcode('single-vacancy', function ($atts) {
+    ob_start();
+    (new SingleVacancyWidget())->widget([], ['vacancyId' => $atts['id'] ?? null]);
+
+    return ob_get_clean();
+});
