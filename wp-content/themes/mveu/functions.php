@@ -115,3 +115,29 @@ add_action( 'widgets_init', function(){
         'after_widget'  => '</div>',
     ]);
 } );
+
+
+// Header menu settings
+add_action('after_setup_theme', function(){
+    register_nav_menu('header-menu', 'Меню в шапке');
+});
+
+
+add_filter('nav_menu_submenu_css_class', function ($classes, $args, $depth) {
+    if ('header-menu' !== $args->theme_location) {
+        return $classes;
+    }
+
+    return ['submenu'];
+}, 10, 3);
+
+add_filter('walker_nav_menu_start_el', function($item_output, $menu_item, $depth, $args){
+    if (
+        'header-menu' === $args->theme_location &&
+        in_array('menu-item-has-children', $menu_item->classes, true)
+    ) {
+        $item_output = str_replace('</a>', ' <i class="ti-angle-down"></i></a>', $item_output);
+    }
+
+    return $item_output;
+}, 10, 4);
