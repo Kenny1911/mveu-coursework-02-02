@@ -11,7 +11,7 @@ $salary = vacancy_plugin_format_salary((int) get_post_meta($post->ID, 'salary', 
 $experience = vacancy_plugin_experience_title((string) get_post_meta($post->ID, 'experience', true));
 $phone = get_post_meta($post->ID, 'phone', true);
 
-$specializations = get_the_terms($post, 'speciality');
+$specializations = get_the_terms($post, 'speciality') ?: [];
 ?>
 
 <div class="main">

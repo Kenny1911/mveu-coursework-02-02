@@ -9,7 +9,7 @@ global $post;
 $rating = (int) get_post_meta($post->ID, 'rating', true);
 $phone = get_post_meta($post->ID, 'phone', true);
 $inn = get_post_meta($post->ID, 'inn', true);
-$cities = get_the_terms($post, 'city');
+$cities = get_the_terms($post, 'city') ?: [];
 ?>
 
 <div class="main">
